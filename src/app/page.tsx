@@ -1,6 +1,6 @@
 import { ButtonLink, Card, Icon } from '@/components/ui';
 import type { IconName } from '@/components/ui';
-import { TARGET_TONNES } from '@/lib';
+import Link from 'next/link';
 
 /**
  * EcoSync Landing Page - Modern, engaging introduction to carbon footprint tracking.
@@ -144,9 +144,9 @@ export default function HomePage() {
           <div className="mt-16 text-center">
             <p className="text-sm text-ink/60 font-medium">
               Our methodology and emission factors are fully documented and based on latest climate science.{' '}
-              <a href="/" className="text-primary hover:text-primary/80 underline decoration-primary/30 hover:decoration-primary/60 transition-colors">
+              <Link href="/" className="text-primary hover:text-primary/80 underline decoration-primary/30 hover:decoration-primary/60 transition-colors">
                 Learn more about our approach
-              </a>
+              </Link>
             </p>
           </div>
         </div>

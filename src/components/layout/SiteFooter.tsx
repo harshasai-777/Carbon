@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Icon } from '@/components/ui';
 
 /**
@@ -33,11 +34,11 @@ export function SiteFooter() {
             © {new Date().getFullYear()} EcoSync · Intelligent Carbon Footprint Tracker · All Rights Reserved
           </p>
           <div className="flex gap-4 text-xs text-ink/50">
-            <a href="/" className="hover:text-primary transition-colors">Privacy</a>
+            <Link href="/" className="hover:text-primary transition-colors">Privacy</Link>
             <span>·</span>
-            <a href="/" className="hover:text-primary transition-colors">Terms</a>
+            <Link href="/" className="hover:text-primary transition-colors">Terms</Link>
             <span>·</span>
-            <a href="/" className="hover:text-primary transition-colors">Methodology</a>
+            <Link href="/" className="hover:text-primary transition-colors">Methodology</Link>
           </div>
         </div>
       </div>

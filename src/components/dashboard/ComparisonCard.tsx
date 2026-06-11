@@ -26,7 +26,6 @@ export interface ComparisonCardProps {
 
 export function ComparisonCard({ title, status, headline, detail }: ComparisonCardProps) {
   const meta = STATUS_META[status];
-  const statusColor = status === 'below' ? 'from-accent to-primary' : status === 'near' ? 'from-warning to-accent' : 'from-primary to-accent';
   return (
     <Card className="group relative overflow-hidden flex flex-col gap-4 border-2 border-accent/10 hover:border-accent/30 transition-all h-full">
       <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
