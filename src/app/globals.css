@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* EcoSync design tokens — Modern Gradient-based theme with teal/cyan/emerald palette.
+   Keep in sync with tailwind.config.ts. */
+:root {
+  --color-primary: #0891b2;
+  --color-secondary: #06b6d4;
+  --color-accent: #10b981;
+  --color-surface: #f0f9ff;
+  --color-ink: #0c2f44;
+  --color-warning: #f59e0b;
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: linear-gradient(135deg, var(--color-surface) 0%, #ffffff 100%);
+  background-attachment: fixed;
+  color: var(--color-ink);
+  min-height: 100vh;
+}
+
+/* Smooth animations and transitions */
+* {
+  @apply transition-colors duration-200;
+}
+
+/* Respect users who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Smooth focus indicators */
+:focus-visible {
+  outline-offset: 2px;
+}
+
+/* Selection color matching brand */
+::selection {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+/* Scrollbar styling for modern browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark);
+}
+
+/* Improved link styling */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  @apply hover:underline transition-all;
+}
+
+/* Form input styling */
+input,
+textarea,
+select {
+  @apply transition-all duration-200;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  @apply ring-2 ring-primary ring-offset-2;
+}
