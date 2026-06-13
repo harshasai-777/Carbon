@@ -78,7 +78,7 @@ export default function HomePage() {
               </ButtonLink>
             </div>
             <p className="mt-6 text-sm text-ink/60 font-medium">
-              💚 Free · 🔒 Completely Private · 🌍 Science-Based · ⚡ Instant Results
+              <span aria-hidden="true">💚 </span>Free · <span aria-hidden="true">🔒 </span>Completely Private · <span aria-hidden="true">🌍 </span>Science-Based · <span aria-hidden="true">⚡ </span>Instant Results
             </p>
           </div>
         </div>
@@ -153,10 +153,10 @@ export default function HomePage() {
       </section>
 
       {/* Final CTA Section - Premium gradient styling */}
-      <section className="relative mx-auto max-w-5xl px-4 py-24 sm:px-6 lg:px-8 sm:py-32">
+      <section aria-labelledby="cta-heading" className="relative mx-auto max-w-5xl px-4 py-24 sm:px-6 lg:px-8 sm:py-32">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-primary/10 rounded-3xl blur-xl opacity-60" />
         <div className="relative rounded-3xl bg-gradient-to-br from-primary via-primary to-accent p-10 sm:p-14 lg:p-16 text-center text-white shadow-2xl ring-1 ring-white/20">
-          <h2 className="font-display text-4xl sm:text-5xl font-bold leading-tight">
+          <h2 id="cta-heading" className="font-display text-4xl sm:text-5xl font-bold leading-tight">
             Ready to Take Climate Action?
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-white/90 font-medium">
@@ -172,7 +172,7 @@ export default function HomePage() {
             </ButtonLink>
           </div>
           <p className="mt-6 text-sm text-white/75 font-medium">
-            ✨ Join thousands making informed climate decisions
+            <span aria-hidden="true">✨ </span>Join thousands making informed climate decisions
           </p>
         </div>
       </section>

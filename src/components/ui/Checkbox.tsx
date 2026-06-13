@@ -25,11 +25,13 @@ export function Checkbox({ label, description, checked, onChange }: CheckboxProp
         type="checkbox"
         checked={checked}
         onChange={(e) => onChange(e.target.checked)}
-        className="mt-1 h-5 w-5 shrink-0 accent-primary"
+        className="mt-1 h-5 w-5 shrink-0 accent-primary focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:outline-none"
       />
+
       <span className="flex flex-col">
         <span className="font-medium text-ink">{label}</span>
-        {description ? <span className="text-sm text-ink/60">{description}</span> : null}
+        {description ? <span className="text-sm text-ink/75">{description}</span> : null}
+
       </span>
     </label>
   );

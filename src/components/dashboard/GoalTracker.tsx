@@ -77,7 +77,7 @@ export function GoalTracker({ currentTonnes }: GoalTrackerProps) {
             <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-accent/20 to-primary/20 text-accent">
               <Icon name="target" size={24} />
             </span>
-            <h3 className="font-display text-xl font-semibold text-ink">🎯 Set a Reduction Goal</h3>
+            <h3 className="font-display text-xl font-semibold text-ink"><span aria-hidden="true">🎯 </span>Set a Reduction Goal</h3>
           </div>
           <p className="text-sm text-ink/70">
             Pick an annual target below your current <span className="font-bold text-primary">{formatTonnes(currentTonnes)}</span>. We&apos;ll track your progress as you recalculate over time.
@@ -94,7 +94,7 @@ export function GoalTracker({ currentTonnes }: GoalTrackerProps) {
             />
           </div>
           <div>
-            <Button onClick={handleSet} className="bg-gradient-to-r from-accent to-primary">
+            <Button onClick={handleSet} aria-label="Set reduction goal" className="bg-gradient-to-r from-accent to-primary">
               <Icon name="check" size={18} />
               Set Goal
             </Button>
@@ -114,9 +114,10 @@ export function GoalTracker({ currentTonnes }: GoalTrackerProps) {
             <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-accent/20 to-primary/20 text-accent">
               <Icon name="target" size={24} />
             </span>
-            <h3 className="font-display text-xl font-semibold text-ink">🎯 Reduction Goal</h3>
+            <h3 className="font-display text-xl font-semibold text-ink"><span aria-hidden="true">🎯 </span>Reduction Goal</h3>
           </div>
-          <Button variant="ghost" size="md" onClick={handleClear} className="text-ink/60 hover:text-ink">
+          <Button variant="ghost" size="md" onClick={handleClear} aria-label="Reset reduction goal" className="text-ink/75 hover:text-ink">
+
             Reset
           </Button>
         </div>
@@ -151,7 +152,7 @@ export function GoalTracker({ currentTonnes }: GoalTrackerProps) {
             {progress.achieved ? (
               <span className="inline-flex items-center gap-2 text-primary">
                 <Icon name="trophy" size={18} />
-                🎉 Target reached! You&apos;ve cut {formatTonnes(progress.reducedTonnes)} from your baseline.
+                <span aria-hidden="true">🎉 </span>Target reached! You&apos;ve cut {formatTonnes(progress.reducedTonnes)} from your baseline.
               </span>
             ) : (
               <span className="text-ink/80">{formatPercent(progress.progressPercent)} progress · <span className="text-accent font-bold">{formatTonnes(progress.remainingTonnes)} to go</span> to reach your target.</span>

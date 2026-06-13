@@ -6,8 +6,8 @@
  * Later fragments win at the source level; we do not attempt Tailwind conflict
  * resolution, so order class names so the intended utility comes last.
  */
-export type ClassValue = string | number | false | null | undefined;
+export type ClassValue = string | false | null | undefined;
 
 export function cn(...values: ClassValue[]): string {
-  return values.filter((v): v is string | number => Boolean(v)).join(' ');
+  return values.filter((v): v is string => Boolean(v)).join(' ');
 }

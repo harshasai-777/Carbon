@@ -23,7 +23,7 @@ export default function DashboardPage() {
         
         <header className="mb-12">
           <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-3">
-            📊 Your Dashboard
+            <span aria-hidden="true">📊 </span>Your Dashboard
           </span>
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
             <div>

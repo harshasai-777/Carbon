@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import type { ReactNode } from 'react';
 import { Card, Icon } from '@/components/ui';
 import type { IconName } from '@/components/ui';
@@ -10,7 +11,7 @@ export interface StatCardProps {
 }
 
 /** Modern headline metric card with gradient icon and enhanced typography. */
-export function StatCard({ label, value, icon, children }: StatCardProps) {
+export const StatCard = memo(function StatCard({ label, value, icon, children }: StatCardProps) {
   return (
     <Card className="group relative overflow-hidden flex flex-col gap-3 border-2 border-primary/10 hover:border-primary/30 transition-all h-full">
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -26,4 +27,5 @@ export function StatCard({ label, value, icon, children }: StatCardProps) {
       {children && <div className="relative text-sm text-ink/70">{children}</div>}
     </Card>
   );
-}
+});
+

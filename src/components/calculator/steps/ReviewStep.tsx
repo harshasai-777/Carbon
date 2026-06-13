@@ -77,28 +77,29 @@ export function ReviewStep({ input }: ReviewStepProps) {
           Estimated annual footprint
         </p>
         <p className="mt-1 font-display text-4xl font-bold text-ink">{formatCo2(result.totalKg)}</p>
-        <p className="mt-1 text-sm text-ink/60">
+        <p className="mt-1 text-sm text-ink/75">
           Submit to save your profile and open the full breakdown.
         </p>
       </div>
 
-      <dl className="grid gap-4 sm:grid-cols-2">
+      <div className="grid gap-4 sm:grid-cols-2">
         {groups.map((group) => (
-          <div key={group.heading} className="rounded-2xl border border-primary/10 bg-white p-4">
+          <section key={group.heading} className="rounded-2xl border border-primary/10 bg-white p-4">
             <h3 className="font-display text-sm font-semibold uppercase tracking-wide text-primary-dark">
               {group.heading}
             </h3>
-            <div className="mt-2 flex flex-col gap-1.5">
+            <dl className="mt-2 flex flex-col gap-1.5 text-sm">
               {group.rows.map((row) => (
-                <div key={row.label} className="flex justify-between gap-4 text-sm">
-                  <dt className="text-ink/60">{row.label}</dt>
+                <div key={row.label} className="flex justify-between gap-4">
+                  <dt className="text-ink/75">{row.label}</dt>
                   <dd className="text-right font-medium text-ink">{row.value}</dd>
                 </div>
               ))}
-            </div>
-          </div>
+            </dl>
+          </section>
         ))}
-      </dl>
+      </div>
+
     </div>
   );
 }

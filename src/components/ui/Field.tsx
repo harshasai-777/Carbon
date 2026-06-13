@@ -39,10 +39,11 @@ export function Field({ label, hint, error, required, children, className }: Fie
         ) : null}
       </label>
       {hint ? (
-        <p id={hintId} className="text-sm text-ink/60">
+        <p id={hintId} className="text-sm text-ink/75">
           {hint}
         </p>
       ) : null}
+
       {children({ controlId, describedBy, invalid })}
       <p id={errorId} aria-live="polite" className="min-h-[1.25rem] text-sm font-medium text-red-700">
         {error}

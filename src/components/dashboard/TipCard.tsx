@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { Badge, Icon } from '@/components/ui';
 import { formatCo2, type Tip } from '@/lib';
 import { CATEGORY_META, EFFORT_LABELS } from '@/components/labels';
@@ -15,7 +16,7 @@ export interface TipCardProps {
 }
 
 /** A single ranked reduction action, showing estimated saving and effort. */
-export function TipCard({ tip, rank }: TipCardProps) {
+export const TipCard = memo(function TipCard({ tip, rank }: TipCardProps) {
   const category = CATEGORY_META[tip.category];
   const effortColor = tip.effort === 'low' ? 'from-accent to-primary' : tip.effort === 'medium' ? 'from-warning to-accent' : 'from-primary to-accent';
   return (
@@ -38,16 +39,18 @@ export function TipCard({ tip, rank }: TipCardProps) {
           </div>
         </div>
         <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-primary/10 group-hover:border-primary/20 transition-colors">
-          <Badge tone="primary" className="bg-gradient-to-r from-accent/20 to-primary/20 text-primary font-semibold">
+          <Badge tone="primary" className="bg-gradient-to-r from-accent/20 to-primary/20 text-primary-dark font-semibold">
             <Icon name="leaf" size={14} />
             Save ~{formatCo2(tip.estimatedSavingKg)}/yr
           </Badge>
           <Badge tone={EFFORT_TONE[tip.effort]} className={`bg-gradient-to-r ${effortColor} text-white font-semibold`}>
             {EFFORT_LABELS[tip.effort]}
           </Badge>
-          <Badge tone="neutral" className="bg-primary/10 text-primary/80">{category.label}</Badge>
+          <Badge tone="primary">{category.label}</Badge>
+
         </div>
       </div>
     </li>
   );
-}
+});
+

@@ -13,8 +13,8 @@ export default defineConfig({
     coverage: {
       provider: 'v8',
       reporter: ['text', 'text-summary', 'html', 'lcov'],
-      include: ['src/lib/**/*.ts'],
-      exclude: ['src/lib/**/*.test.ts', 'src/lib/index.ts'],
+      include: ['src/lib/**/*.ts', 'src/components/**/*.ts'],
+      exclude: ['src/lib/**/*.test.ts', 'src/lib/index.ts', 'src/components/**/*.test.ts'],
       thresholds: {
         lines: 90,
         functions: 90,

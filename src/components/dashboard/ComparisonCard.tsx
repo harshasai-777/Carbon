@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { Card, Badge, Icon } from '@/components/ui';
 import { cn } from '@/lib/cn';
 import type { ComparisonStatus } from '@/lib';
@@ -24,7 +25,7 @@ export interface ComparisonCardProps {
   detail: string;
 }
 
-export function ComparisonCard({ title, status, headline, detail }: ComparisonCardProps) {
+export const ComparisonCard = memo(function ComparisonCard({ title, status, headline, detail }: ComparisonCardProps) {
   const meta = STATUS_META[status];
   return (
     <Card className="group relative overflow-hidden flex flex-col gap-4 border-2 border-accent/10 hover:border-accent/30 transition-all h-full">
@@ -43,4 +44,5 @@ export function ComparisonCard({ title, status, headline, detail }: ComparisonCa
       </Badge>
     </Card>
   );
-}
+});
+

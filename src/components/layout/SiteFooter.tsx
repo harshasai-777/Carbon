@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { Icon } from '@/components/ui';
 
+const CURRENT_YEAR = new Date().getFullYear();
+
 /**
  * Modern footer with EcoSync branding, transparency note, and social/legal links.
  * Static Server Component with gradient styling.
@@ -21,7 +23,7 @@ export function SiteFooter() {
               Track your environmental impact and take meaningful climate action today.
             </p>
           </div>
-          <div className="text-sm text-ink/60">
+          <div className="text-sm text-ink/75">
             <p className="font-semibold text-ink mb-2">About this tool</p>
             <p className="max-w-md">
               Estimates are for awareness and relative comparison, not audit-grade carbon accounting. 
@@ -30,18 +32,20 @@ export function SiteFooter() {
           </div>
         </div>
         <div className="mt-8 border-t border-primary/10 pt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-          <p className="text-xs text-ink/50">
-            © {new Date().getFullYear()} EcoSync · Intelligent Carbon Footprint Tracker · All Rights Reserved
+          <p className="text-xs text-ink/75">
+            © {CURRENT_YEAR} EcoSync · Intelligent Carbon Footprint Tracker · All Rights Reserved
           </p>
-          <div className="flex gap-4 text-xs text-ink/50">
-            <Link href="/" className="hover:text-primary transition-colors">Privacy</Link>
-            <span>·</span>
-            <Link href="/" className="hover:text-primary transition-colors">Terms</Link>
-            <span>·</span>
-            <Link href="/" className="hover:text-primary transition-colors">Methodology</Link>
+          <div className="flex gap-4 text-xs text-ink/75">
+
+            <Link href="/" aria-label="Privacy policy" className="hover:text-primary transition-colors">Privacy</Link>
+            <span aria-hidden="true">·</span>
+            <Link href="/" aria-label="Terms of service" className="hover:text-primary transition-colors">Terms</Link>
+            <span aria-hidden="true">·</span>
+            <Link href="/" aria-label="Methodology and data sources" className="hover:text-primary transition-colors">Methodology</Link>
           </div>
         </div>
       </div>
     </footer>
   );
 }
+

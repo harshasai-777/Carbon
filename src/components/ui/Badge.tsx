@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import type { ReactNode } from 'react';
 import { cn } from '@/lib/cn';
 
@@ -18,7 +19,7 @@ export interface BadgeProps {
 }
 
 /** Small status/label pill. Carries its own text — never color-only. */
-export function Badge({ tone = 'neutral', children, className }: BadgeProps) {
+export const Badge = memo(function Badge({ tone = 'neutral', children, className }: BadgeProps) {
   return (
     <span
       className={cn(
@@ -30,4 +31,5 @@ export function Badge({ tone = 'neutral', children, className }: BadgeProps) {
       {children}
     </span>
   );
-}
+});
+

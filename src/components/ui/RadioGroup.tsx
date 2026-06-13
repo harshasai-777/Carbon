@@ -42,7 +42,8 @@ export function RadioGroup<T extends string>({
     <fieldset aria-describedby={describedBy} aria-invalid={error ? true : undefined}>
       <legend className="font-medium text-ink">{legend}</legend>
       {hint ? (
-        <p id={hintId} className="mt-1 text-sm text-ink/60">
+        <p id={hintId} className="mt-1 text-sm text-ink/75">
+
           {hint}
         </p>
       ) : null}
@@ -69,12 +70,14 @@ export function RadioGroup<T extends string>({
                 value={opt.value}
                 checked={checked}
                 onChange={() => onChange(opt.value)}
-                className="mt-1 h-4 w-4 shrink-0 accent-primary"
+                className="mt-1 h-4 w-4 shrink-0 accent-primary focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:outline-none"
               />
+
               <span className="flex flex-col">
                 <span className="font-medium text-ink">{opt.label}</span>
                 {opt.description ? (
-                  <span className="text-sm text-ink/60">{opt.description}</span>
+                  <span className="text-sm text-ink/75">{opt.description}</span>
+
                 ) : null}
               </span>
             </label>

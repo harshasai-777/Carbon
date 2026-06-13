@@ -6,6 +6,7 @@
    Keep in sync with tailwind.config.ts. */
 :root {
   --color-primary: #0891b2;
+  --color-primary-dark: #0369a1;
   --color-secondary: #06b6d4;
   --color-accent: #10b981;
   --color-surface: #f0f9ff;
@@ -27,8 +28,14 @@ body {
   min-height: 100vh;
 }
 
-/* Smooth animations and transitions */
-* {
+/* Smooth transitions on interactive elements — scoped to avoid forcing
+   transitions on structural/layout elements like divs and headings. */
+a,
+button,
+input,
+textarea,
+select,
+[role='button'] {
   @apply transition-colors duration-200;
 }
 
@@ -46,8 +53,10 @@ body {
   }
 }
 
-/* Smooth focus indicators */
+/* Smooth focus indicators — provides a visible outline for any element that
+   does not already define its own focus ring via Tailwind's ring utilities. */
 :focus-visible {
+  outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
 

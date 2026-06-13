@@ -27,7 +27,7 @@ export default function CalculatorPage() {
         
         <header className="mb-12 text-center sm:text-left">
           <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-3">
-            🧮 Carbon Calculator
+            <span aria-hidden="true">🧮 </span>Carbon Calculator
           </span>
           <h1 className="font-display text-5xl sm:text-6xl font-bold text-ink mb-4 leading-tight">
             Calculate Your <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Carbon Impact</span>
